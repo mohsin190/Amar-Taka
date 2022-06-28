@@ -1,18 +1,20 @@
-// login button event handler
+// login page event handler
 
 const enterBtn = document.getElementById("enter");
 enterBtn.addEventListener("click", function () {
-    const loginPage = document.getElementById('login-page');
-    loginPage.style.display = 'none';
+  const loginPage = document.getElementById('login-page');
+  loginPage.style.display = 'none';
 
-    const transactionArea = document.getElementById('transaction');
-    transactionArea.style.display ='block';
+  const transactionArea = document.getElementById('transaction');
+  transactionArea.style.display = 'block';
 })
 
+// transaction page event handler
 
-// way 2 এর জন্য calculation
+// function কিভাবে হইছে সেটা বুঝতে problem হইলে (junior-script.js) file দেখলেই হবে
 
-function updateSpanText(id, addNum, outNum){
+
+function updateSpanText(id, addNum, outNum) {
   let current = document.getElementById(id).innerText;
   current = parseFloat(current);
   const total = current + addNum - outNum;
@@ -20,27 +22,19 @@ function updateSpanText(id, addNum, outNum){
 }
 
 
+function getInputAmount(id) {
+  let amount = document.getElementById(id).value;
+  amount = parseFloat(amount);
+  return amount;
+}
+
+
 // deposit button event handler
 
 const depositBtn = document.getElementById('add-deposit');
 depositBtn.addEventListener('click', function () {
-  
-  let depositAmount = document.getElementById('deposit-amount').value;
-  depositAmount = parseFloat(depositAmount);
 
-  //way 1
-
-  /* let currentDeposit = document.getElementById('current-deposit').innerText;
-  currentDeposit = parseFloat(currentDeposit);
-  const totalDeposit = currentDeposit + depositAmount;
-  document.getElementById('current-deposit').innerText = totalDeposit;
-
-  let currentBalance = document.getElementById('current-balance').innerText;
-  currentBalance = parseFloat(currentBalance);
-  const totalBalance = currentBalance + depositAmount;
-  document.getElementById('current-balance').innerText = totalBalance; */
-
-  //way 2
+  const depositAmount = getInputAmount('deposit-amount');
 
   updateSpanText('current-deposit', depositAmount, 0);
   updateSpanText('current-balance', depositAmount, 0);
@@ -53,24 +47,11 @@ depositBtn.addEventListener('click', function () {
 
 const withdrawBtn = document.getElementById('out-money');
 withdrawBtn.addEventListener('click', function () {
-  
-  let withdrawAmount = document.getElementById('withdraw-amount').value;
-  withdrawAmount = parseFloat(withdrawAmount);
 
-  /* let currentwithdraw = document.getElementById('current-withdraw').innerText;
-  currentwithdraw = parseFloat(currentwithdraw);
-  const totalwithdraw = currentwithdraw + withdrawAmount;
-  document.getElementById('current-withdraw').innerText = totalwithdraw; */
+  const withdrawAmount = getInputAmount('withdraw-amount');
 
-  /* let currentBalance = document.getElementById('current-balance').innerText;
-  currentBalance = parseFloat(currentBalance);
-  const totalBalance = currentBalance - withdrawAmount;
-  document.getElementById('current-balance').innerText = totalBalance; */
-
-   //way 2 
-
-   updateSpanText('current-withdraw', withdrawAmount, 0);
-   updateSpanText('current-balance', 0 , withdrawAmount)
+  updateSpanText('current-withdraw', withdrawAmount, 0);
+  updateSpanText('current-balance', 0, withdrawAmount);
 
   document.getElementById('withdraw-amount').value = "";
 
