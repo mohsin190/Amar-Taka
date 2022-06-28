@@ -1,0 +1,49 @@
+body{
+  padding: 100px;
+}
+.login-form{
+  border-radius: 5px;
+  box-shadow: 6px 6px 15px rgb(110, 109, 109);
+  padding: 5% 5%;
+  margin-top: 50px;
+}
+#transaction{
+  display: none;
+}
+.row-1 .card{
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  transition: 0.3s;
+}
+.row-1 .card:hover{
+  transform: scale(1.1);
+  
+}
+.row-1 .card h5 {
+  font-weight: 500;
+}
+.row-1 .card h2{
+  font-weight: bolder;
+  font-size: 30px;
+}
+.deposit{
+  background-color: rgb(114, 0, 254);
+}
+.withdraw{
+  background-color: rgb(252, 182, 89);
+}
+.balance{
+  background-color: coral;
+}
+
+.transfer{
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgb(155, 153, 153), -2px -2px 8px rgb(110, 109, 109);
+  padding: 5% 5%;
+  margin-top: 50px;
+}
+.transfer h4 {
+  font-weight: bold;
+}
