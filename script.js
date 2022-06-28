@@ -14,10 +14,10 @@ enterBtn.addEventListener("click", function () {
 // function কিভাবে হইছে সেটা বুঝতে problem হইলে (junior-script.js) file দেখলেই হবে
 
 
-function updateSpanText(id, addNum, outNum) {
+function updateSpanText(id, addNum) {
   let current = document.getElementById(id).innerText;
   current = parseFloat(current);
-  const total = current + addNum - outNum;
+  const total = current + addNum;
   document.getElementById(id).innerText = total;
 }
 
@@ -36,8 +36,8 @@ depositBtn.addEventListener('click', function () {
 
   const depositAmount = getInputAmount('deposit-amount');
 
-  updateSpanText('current-deposit', depositAmount, 0);
-  updateSpanText('current-balance', depositAmount, 0);
+  updateSpanText('current-deposit', depositAmount);
+  updateSpanText('current-balance', depositAmount);
 
   document.getElementById('deposit-amount').value = "";
 
@@ -50,8 +50,8 @@ withdrawBtn.addEventListener('click', function () {
 
   const withdrawAmount = getInputAmount('withdraw-amount');
 
-  updateSpanText('current-withdraw', withdrawAmount, 0);
-  updateSpanText('current-balance', 0, withdrawAmount);
+  updateSpanText('current-withdraw', withdrawAmount);
+  updateSpanText('current-balance', -1 * withdrawAmount);
 
   document.getElementById('withdraw-amount').value = "";
 

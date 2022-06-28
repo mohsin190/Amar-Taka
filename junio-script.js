@@ -13,10 +13,10 @@ enterBtn.addEventListener("click", function () {
                                
 // way 2 এর জন্য calculation
 
-function updateSpanText(id, addNum, outNum){
+function updateSpanText(id, addNum){
   let current = document.getElementById(id).innerText;
   current = parseFloat(current);
-  const total = current + addNum - outNum;
+  const total = current + addNum;
   document.getElementById(id).innerText = total;
 }
 
@@ -57,8 +57,8 @@ depositBtn.addEventListener('click', function () {
 
   //way 2
 
-  updateSpanText('current-deposit', depositAmount, 0);
-  updateSpanText('current-balance', depositAmount, 0);
+  updateSpanText('current-deposit', depositAmount);
+  updateSpanText('current-balance', depositAmount);
 
   document.getElementById('deposit-amount').value = "";
 
@@ -98,8 +98,8 @@ withdrawBtn.addEventListener('click', function () {
 
    //way 2 
 
-   updateSpanText('current-withdraw', withdrawAmount, 0);
-   updateSpanText('current-balance', 0 , withdrawAmount)
+   updateSpanText('current-withdraw', withdrawAmount);
+   updateSpanText('current-balance', -1 * withdrawAmount);
 
   document.getElementById('withdraw-amount').value = "";
 
