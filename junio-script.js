@@ -10,25 +10,8 @@ enterBtn.addEventListener("click", function () {
 })
 
                                  // transaction page event handler
-                               
-// way 2 এর জন্য calculation
-
-function updateSpanText(id, addNum){
-  let current = document.getElementById(id).innerText;
-  current = parseFloat(current);
-  const total = current + addNum;
-  document.getElementById(id).innerText = total;
-}
-
-// option 2 এর জন্য 
-
-function getInputAmount(id) {
-  let amount = document.getElementById(id).value;
-  amount = parseFloat(amount);
-  return amount;
-}
-
-
+  
+                                 
 // deposit button event handler
 
 const depositBtn = document.getElementById('add-deposit');
@@ -65,9 +48,22 @@ depositBtn.addEventListener('click', function () {
 })
 
 
+// option 2 এর জন্য 
 
+function getInputAmount(id) {
+  let amount = document.getElementById(id).value;
+  amount = parseFloat(amount);
+  return amount;
+}
 
+// way 2 এর জন্য calculation
 
+function updateSpanText(id, addNum){
+  let current = document.getElementById(id).innerText;
+  current = parseFloat(current);
+  const total = current + addNum;
+  document.getElementById(id).innerText = total;
+}
 
 
 // withdraw button event handler

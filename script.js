@@ -13,22 +13,6 @@ enterBtn.addEventListener("click", function () {
 
 // function কিভাবে হইছে সেটা বুঝতে problem হইলে (junior-script.js) file দেখলেই হবে
 
-
-function updateSpanText(id, addNum) {
-  let current = document.getElementById(id).innerText;
-  current = parseFloat(current);
-  const total = current + addNum;
-  document.getElementById(id).innerText = total;
-}
-
-
-function getInputAmount(id) {
-  let amount = document.getElementById(id).value;
-  amount = parseFloat(amount);
-  return amount;
-}
-
-
 // deposit button event handler
 
 const depositBtn = document.getElementById('add-deposit');
@@ -42,6 +26,20 @@ depositBtn.addEventListener('click', function () {
   document.getElementById('deposit-amount').value = "";
 
 })
+
+function getInputAmount(id) {
+  let amount = document.getElementById(id).value;
+  amount = parseFloat(amount);
+  return amount;
+}
+
+function updateSpanText(id, addNum) {
+  let current = document.getElementById(id).innerText;
+  current = parseFloat(current);
+  const total = current + addNum;
+  document.getElementById(id).innerText = total;
+}
+
 
 // withdraw button event handler
 
